@@ -5,31 +5,27 @@ import {definePreset} from '@unocss/core'
 // https://coreui.io/blog/how-to-check-if-string-is-number-in-javascript
 export const isNumeric = (string) => string == Number.parseFloat(string)
 
-export const presetDelight = definePreset(() => {
+export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
   return {
     name:'@fw/preset-delight',
     theme:{
       bp:{s:'40em', m:'52em', l:'64em', x:'80em'},
       c:{
-        10:'hsla(200, 7%, 10%, 1)',
-        15:'hsla(200, 7%, 15%, 1)',
-        20:'hsla(200, 7%, 20%, 1)',
-        30:'hsla(200, 7%, 30%, 1)',
-        40:'hsla(200, 7%, 40%, 1)',
-        50:'hsla(200, 7%, 50%, 1)',
-        60:'hsla(200, 7%, 60%, 1)',
-        70:'hsla(200, 7%, 70%, 1)',
-        80:'hsla(200, 7%, 80%, 1)',
-        90:'hsla(200, 7%, 90%, 1)',
-        95:'hsla(200, 7%, 95%, 1)',
-        97:'hsla(200, 7%, 97%, 1)',
-        98:'hsla(200, 7%, 98%, 1)',
+        10:`hsla(${grayHue}, 7%, 10%, 1)`,
+        15:`hsla(${grayHue}, 7%, 15%, 1)`,
+        20:`hsla(${grayHue}, 7%, 20%, 1)`,
+        30:`hsla(${grayHue}, 7%, 30%, 1)`,
+        40:`hsla(${grayHue}, 7%, 40%, 1)`,
+        50:`hsla(${grayHue}, 7%, 50%, 1)`,
+        60:`hsla(${grayHue}, 7%, 60%, 1)`,
+        70:`hsla(${grayHue}, 7%, 70%, 1)`,
+        80:`hsla(${grayHue}, 7%, 80%, 1)`,
+        90:`hsla(${grayHue}, 7%, 90%, 1)`,
+        95:`hsla(${grayHue}, 7%, 95%, 1)`,
+        97:`hsla(${grayHue}, 7%, 97%, 1)`,
+        98:`hsla(${grayHue}, 7%, 98%, 1)`,
         t:'transparent',
         w:'white',
-      },
-      ff:{
-        0:'"Roboto", sans-serif',
-        1:'"Lora", serif'
       },
       // https://type-scale.com/ -> 1.333
       fz:{
