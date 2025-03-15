@@ -149,8 +149,6 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
     rules:[
       // multiples stay higher to be overriden by singles later
       [/^([-]?)(m|p)([xy])-(.+)$/, ([_, sign, v, v2, v3], {theme}) => {
-
-        // let getMulti
         let o = {
           p:{
             x:{
@@ -191,7 +189,7 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
 
         return {[{'':p, t:`${p}-top`, r:`${p}-right`, b:`${p}-bottom`, l:`${p}-left`}[v2]]:theme.get(v, v3, sign)}
       }],
-      [/^(-?)(c|ct|cu|clr|d|bg|bc|bi|bs|b|bR|bC|bb|bl|br|bt|bw|w|ws|h|lh|mxw|mnw|mxh|mnh|ff|fz|fw|fs|fx|fxf|flt|fr|i|g|ga|gp|gt|gaf|pn|pc|pi|ps|pe|o|ol|of|od|ta|td|tf|tfo|tr|to|tt|ts|ti|rz|v|va|z)-(.+)$/,
+      [/^(-?)(c|ct|cu|clr|d|bg|bc|bcp|bi|bs|b|bR|bC|bb|bl|br|bt|bw|w|ws|h|lh|mxw|mnw|mxh|mnh|ff|fz|fw|fs|fx|fxf|flt|fr|i|g|ga|gp|gt|gaf|pn|pc|pi|ps|pe|o|ol|of|od|ta|td|tf|tfo|tr|to|tt|ts|ti|rz|v|va|z)-(.+)$/,
         ([_, sign, v, v2], {theme}) => ({[{
           c:'color',
           ct:'content',
@@ -200,6 +198,7 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
           d:'display',
           bg:'background',
           bc:'background-color',
+          bcp:'background-clip',
           bi:'background-image',
           bs:'box-shadow',
           b:'border',
@@ -284,6 +283,9 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
           selector:s => `${s}${m[1].replace('_', ' ')}`,
         }))
       },
+    ],
+    shortcuts:[
+      {'ctr':'w-100% mxw-110 mx-a px-0.5 m:px-un'}
     ],
   }
 })
