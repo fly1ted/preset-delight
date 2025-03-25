@@ -135,14 +135,22 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
                 html {
                     font-size: 62.5%;
                 }
+
                 body{
                     font-size: 1.6rem;
                     font-family:${theme.ff[0]};
                     margin: 0;
                 }
+
                 [un-cloak] {
                     display: none;
                 }
+
+                [aria-disabled=true], [disabled], [readonly]{
+                  pointer-events:none;
+                  opacity:0.4;
+                  userSelect:none;
+                },
             `,
       },
     ],
