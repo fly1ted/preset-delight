@@ -107,7 +107,7 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
         // some props use the same scale
         p = {
           bg:'c',
-          bgc:'c'
+          bc:'c'
         }[p] || p
 
         // console.log({p, v, sign})
