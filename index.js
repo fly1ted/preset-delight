@@ -85,6 +85,7 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
         f:'fixed'
       },
       pc:{c:'center'},
+      pi:{c:'center'},
       of:{
         ah:'auto hidden',
         ha:'hidden auto',
@@ -94,6 +95,9 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
       v:{h:'hidden',},
       tt:{u:'uppercase'},
       rz:{v:'vertical'},
+      bR:{
+        c:'999rem',
+      },
       get(p, v, sign='') {
         let short = {
           'a':'auto',
@@ -107,7 +111,8 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
         // some props use the same scale
         p = {
           bg:'c',
-          bc:'c'
+          bc:'c',
+          bi:'c',
         }[p] || p
 
         // console.log({p, v, sign})
@@ -134,6 +139,7 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
         getCSS:({theme}) => `
                 html {
                     font-size: 62.5%;
+                    box-sizing: border-box;
                 }
 
                 body{
@@ -150,7 +156,10 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
                   pointer-events:none;
                   opacity:0.4;
                   userSelect:none;
-                },
+                }
+
+                // https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+                *, *:before, *:after{box-sizing: inherit}
             `,
       },
     ],
@@ -197,8 +206,10 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
 
         return {[{'':p, t:`${p}-top`, r:`${p}-right`, b:`${p}-bottom`, l:`${p}-left`}[v2]]:theme.get(v, v3, sign)}
       }],
-      [/^(-?)(c|ct|cu|clr|d|bg|bc|bcp|bi|bs|b|bR|bC|bb|bl|br|bt|bw|w|ws|h|lh|mxw|mnw|mxh|mnh|ff|fz|fw|fs|fx|fxf|flt|fr|i|g|ga|gp|gt|gaf|pn|pc|pi|ps|pe|o|ol|of|od|ta|td|tf|tfo|tr|to|tt|ts|ti|rz|v|va|z)-(.+)$/,
+      [/^(-?)(adl|adu|c|ct|cu|clr|d|bg|bc|bcp|bi|bs|b|bR|bC|bb|bl|br|bt|bw|w|ws|h|lh|mxw|mnw|mxh|mnh|ff|fz|fw|fs|fx|fxf|flt|fr|i|g|ga|gp|gt|gaf|pn|pc|pi|ps|pe|o|ol|of|od|ta|td|tf|tfo|tr|to|tt|ts|ti|rz|v|va|z)-(.+)$/,
         ([_, sign, v, v2], {theme}) => ({[{
+          adl:'animation-delay',
+          adu:'animation-duration',
           c:'color',
           ct:'content',
           cu:'cursor',
@@ -293,7 +304,8 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
       },
     ],
     shortcuts:[
-      {'ctr':'w-100% mxw-110 mx-a px-0.5 m:px-un'}
+      {'ctr':'w-100% mxw-110 mx-a px-0.5 m:px-un'},
+      {'pnc':'pn-a i-50%_auto_auto_50% tf-translate(-50%,-50%)'},
     ],
   }
 })
