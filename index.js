@@ -306,6 +306,7 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
     shortcuts:[
       {'ctr':'w-100% mxw-110 mx-a px-0.5 m:px-un'},
       {'pnc':'pn-a i-50%_auto_auto_50% tf-translate(-50%,-50%)'},
+      {'pny':'pn-a i-50%_auto_auto_auto tf-translateY(-50%)'},
     ],
   }
 })
