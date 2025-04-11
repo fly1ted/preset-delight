@@ -10,6 +10,7 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
     name:'@fw/preset-delight',
     theme:{
       bp:{s:'40em', m:'52em', l:'64em', x:'80em'},
+      bi:{},
       c:{
         10:`hsla(${grayHue}, 7%, 10%, 1)`,
         15:`hsla(${grayHue}, 7%, 15%, 1)`,
@@ -92,7 +93,7 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
         h:'hidden',
       },
       ws:{nw:'nowrap'},
-      v:{h:'hidden',},
+      v:{h:'hidden'},
       tt:{u:'uppercase'},
       rz:{v:'vertical'},
       bR:{
@@ -112,7 +113,6 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
         p = {
           bg:'c',
           bc:'c',
-          bi:'c',
         }[p] || p
 
         // console.log({p, v, sign})
@@ -307,6 +307,7 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
       {'ctr':'w-100% mxw-110 mx-a px-0.5 m:px-un'},
       {'pnc':'pn-a i-50%_auto_auto_50% tf-translate(-50%,-50%)'},
       {'pny':'pn-a i-50%_auto_auto_auto tf-translateY(-50%)'},
+      {'pnx':'pn-a i-auto_auto_auto_50% tf-translateX(-50%)'},
     ],
   }
 })
