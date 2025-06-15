@@ -1,6 +1,4 @@
 import {definePreset} from '@unocss/core'
-// import {entriesToCss}from 'https://esm.sh/unocss'
-// console.log(entriesToCss(['mt-2', 'mt-5']))
 
 // https://coreui.io/blog/how-to-check-if-string-is-number-in-javascript
 export const isNumeric = (string) => string == Number.parseFloat(string)
