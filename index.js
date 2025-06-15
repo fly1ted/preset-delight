@@ -124,7 +124,7 @@ export const presetDelight = definePreset(({ grayHue = 0 } = {}) => {
         // content prop cannot use quotes in class name thus the need to use a diff char
         if(['ct'].includes(p)) return `${sign}${v.replaceAll('|','"')}`
         // some props that use numbers need to stay as they are
-        if(['z','o','od','fx','lh'].includes(p)) return `${sign}${v}`
+        if(['z','o','od','fx','lh'].includes(p)) return `${sign}${v.replaceAll('_', ' ')}`
         // numbers are to become rems
         if(isNumeric(v)) return v == 0 ? 0 : `${sign}${v}rem`
         // for shortcut props like inset
